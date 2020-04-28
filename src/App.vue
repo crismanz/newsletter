@@ -29,4 +29,13 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+a {
+  color: #42b983;
+}
+
+a:hover {
+  color: #42b983;
+  text-decoration: underline;
+}
 </style>
