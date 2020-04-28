@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/subscription">Subscription</router-link>
+      <router-link to="/subscription">Subscription</router-link> |
+      <router-link to="/privacy">Privacy Policy</router-link>
     </div>
     <router-view/>
   </div>
@@ -15,6 +16,9 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #nav {
