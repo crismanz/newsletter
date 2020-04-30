@@ -1,84 +1,55 @@
 <template>
   <div class="subscriptionForm">
-    <form>
+    <form id="form" @submit="formSubmit">
       <div class="form-group">
-        <label>Email address</label>
-        <input type="email" class="form-control" aria-describedby="emailHelp" required>
+        <label>Email address *</label>
+        <input 
+          type="email"
+          class="form-control"
+          v-model="email"
+          required 
+          autofocus>
         <small class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
       <div class="form-group">
         <label>First Name</label>
         <input 
-          type="firstName" 
-          class="form-control" />
+          class="form-control"
+          v-model="firstName">
       </div>
       <div class="form-group">
         <label>Last Name</label>
         <input 
-          type="lastName" 
-          class="form-control" />
+          class="form-control" 
+          v-model="lastName">
       </div>
-      <fieldset class="form-group">
-        <div class="row">
-          <legend class="col-form-label col-sm-6">
-            Please select your gender:
-          </legend>
-          <div class="col-sm-6">
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="gridRadios"
-                value="female">
-              <label 
-                class="form-check-label" 
-                for="female">
-                  Female
-              </label>
-            </div>
-            <div class="form-check">
-              <input 
-                class="form-check-input" 
-                type="radio" 
-                name="gridRadios" 
-                value="male">
-              <label 
-                class="form-check-label" 
-                for="male">
-                  Male
-              </label>
-            </div>
-            <div class="form-check">
-              <input 
-                class="form-check-input" 
-                type="radio" 
-                name="gridRadios" 
-                value="no" 
-                checked>
-              <label 
-                class="form-check-label" 
-                for="uncertain"
-                checked>
-                  Uncertain ;)
-              </label>
-            </div>
-          </div>
-          </div>
-        </fieldset>
+        <div class="form-group">
+          <select 
+            v-model="gender" 
+            required>
+            <option disabled value="">Please select your gender</option>
+            <option value="uncertain">Uncertain.. ;)</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+          </select>
+        </div>
         <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" required>
-          <label 
-            class="form-check-label" 
-            for="privacy">
-            I agree to to the 
-              <router-link to="/privacy">privacy policy</router-link>.
+          <input 
+            type="checkbox" 
+            class="form-check-input" 
+            v-model="privacy"
+            :value="true"
+            required>
+          <label>
+            I agree to the <router-link to="/privacy" target="_blank">privacy policy</router-link> *
           </label>
       </div>
-      <button 
-        type="submit" 
-        class="btn btn-primary">
-          Submit
-      </button>
+      <button class="btn btn-primary">Submit</button>
+      <small class="form-text text-muted">
+        * to subscripte to our Newsletter it is 
+        mandatory to provide us your email address and agree to our 
+          <router-link to="/privacy" target="_blank">privacy policy</router-link>
+      </small>
     </form>
   </div>
 </template>
@@ -88,11 +59,30 @@ export default {
   name: 'SubscriptionForm',
   data() {
     return {
-  
+      email: '',
+      firstName: '',
+      lastName: '',
+      gender: '',
+      privacy: ''
     }
   },
   methods: {
+    formSubmit(e) {
+     e.preventDefault();
 
+      this.axios.post('https://v2-api.sheety.co/7a912c42fc1f84a0b736a7db242ea7a4/newsletter/subscriptions', {
+        subscription: {
+          email: this.email,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          gender: this.gender,
+          privacy: this.privacy
+        }
+      })
+      form.reset();
+      alert('Thank you for subscribing to our Newsletter!');
+      window.location = '/';
+    }
   }
 }
 </script>
@@ -100,7 +90,7 @@ export default {
 <style scoped>
 .subscriptionForm {
   text-align: left;
-  width: 40%;
+  width:60%;
   margin-right: auto;
   margin-left: auto;
 }
