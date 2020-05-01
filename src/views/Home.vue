@@ -17,6 +17,10 @@ export default {
 </script>
 
 <style scoped>
+.home {
+  padding-bottom: 20px;
+}
+
 .envelope {
   width: 135px;
   height: 150px;

@@ -5,13 +5,20 @@
       <router-link to="/subscription">Subscription</router-link> |
       <router-link to="/privacy">Privacy Policy</router-link>
     </div>
+  <div class="content">
     <router-view/>
+  </div>
+     <footer><hr>
+      <p>Contact information: 
+        <a href="mailto:someone@example.com">someone@example.com</a>
+      </p>
+    </footer> 
   </div>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+ font-family: Courier, Monaco, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -45,6 +52,17 @@ a:hover {
 }
 h1 {
   padding: 20px;
+}
+
+.content {
+  padding-bottom: 50px;
+}
+
+footer {
+ position:fixed;
+ bottom:0;
+ width: 60%;
+ background-color: white;
 }
 
 @media only screen and (max-width: 530px) {
