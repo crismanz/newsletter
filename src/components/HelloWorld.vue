@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>Hello everyone,</h1>
     <h2>welcome to the newsletter subscription page</h2>
-    <p>Please subscripte <router-link to="/subscription">here</router-link> for our newsletter.</p>
+    <p>Please subscribe <router-link to="/subscription"><strong>here</strong></router-link> for our newsletter.</p>
   </div>
 </template>
 
