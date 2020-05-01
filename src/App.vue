@@ -5,10 +5,10 @@
       <router-link to="/subscription">Subscription</router-link> |
       <router-link to="/privacy">Privacy Policy</router-link>
     </div>
-  <div class="content">
-    <router-view/>
-  </div>
-     <footer><hr>
+    <div class="content">
+      <router-view/>
+    </div>
+    <footer><hr>
       <p>Contact information: 
         <a href="mailto:someone@example.com">someone@example.com</a>
       </p>
@@ -67,6 +67,9 @@ footer {
 
 @media only screen and (max-width: 530px) {
   #app {
+    width: 90%;
+  }
+  footer {
     width: 90%;
   }
 }

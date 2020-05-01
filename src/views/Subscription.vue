@@ -15,9 +15,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.subscription h1 {
-  padding-bottom: 20px;
-}
-</style>

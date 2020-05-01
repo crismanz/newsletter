@@ -1,5 +1,10 @@
 # newsletter
 
+## Vue ^2.6.11
+```
+npm install vue
+```
+
 ## Project setup
 ```
 npm install
