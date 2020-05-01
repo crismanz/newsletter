@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <router-link to="/subscription"><div class="envelope"/></router-link>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -15,3 +15,17 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.envelope {
+  width: 135px;
+  height: 150px;
+  background: url("../assets/envelope.png") no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.envelope:hover {
+  background: url("../assets/web.png") no-repeat;
+}
+</style>

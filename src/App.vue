@@ -43,4 +43,13 @@ a:hover {
   color: #42b983;
   text-decoration: underline;
 }
+h1 {
+  padding: 20px;
+}
+
+@media only screen and (max-width: 530px) {
+  #app {
+    width: 90%;
+  }
+}
 </style>

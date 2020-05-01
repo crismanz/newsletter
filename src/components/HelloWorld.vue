@@ -8,13 +8,16 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+  name: 'HelloWorld'
 }
 </script>
 
 <style scoped>
-
+h1 {
+  color: #42b983;
+  font-weight: bold;
+}
+p {
+  padding: 20px;
+}
 </style>
